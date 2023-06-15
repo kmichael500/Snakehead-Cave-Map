@@ -1,0 +1,32 @@
+encoding  utf-8
+
+select map_1@survey
+source survey.th
+
+text en "area clay" "mud" 
+
+
+input "layout.th"
+
+#export
+export model -fmt survex -o "output/lineplots/Snakehead Cave Model.3d" -enable walls
+export model -fmt esri -o "output/lineplots/shapefiles" -enable walls -disable splay-shots -enable centerline
+export model -fmt compass -o "output/lineplots/Snakehead Cave Model.plt" -enable walls
+export model -fmt survex -o "output/lineplots/Snakehead Cave Model.sql" -enable walls
+
+export model -o "output/lineplots/Snakehead Cave Model.lox" -enable walls
+
+export map -proj plan -fmt kml -o "output/lineplots/Snakehead Cave KML.kml
+
+#final maps
+export map -projection plan -layout final -o "output/maps/final/Snakehead Cave Plan.pdf"
+export map -projection plan -layout no_labels -o "output/maps/final/Snakehead Cave Plan (No Labels).pdf"
+export map -projection plan -layout no_labels_altitude -o "output/maps/final/Snakehead Cave Plan (No Labels) (Altitude).pdf"
+export map -projection plan -layout altitude -o "output/maps/final/Snakehead Cave Plan (Altitude).pdf"
+
+#working maps
+export map -projection plan -layout working -o "output/maps/working/Snakehead Cave Plan (Working).pdf"
+export map -projection plan -layout working_altitude -o "output/maps/working/Snakehead Cave Plan (Working Altitude).pdf"
+
+
+export continuation-list -o "output/leads/Snakehead Cave Leads.html"
