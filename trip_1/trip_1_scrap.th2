@@ -9,6 +9,16 @@ encoding  utf-8
 
 scrap trip_1_scrap -projection plan -scale [0 0 39.3701 0 0 0 1 0 m]
 
+point 237.5 -245.25 entrance
+
+line dripline
+  190.99 -241.79
+  192.25 -239.25 201.45 -224.56 201.45 -224.56
+  smooth off
+endline
+
+point 287.75 -250.25 label -text "Entrance" -scale l
+
 line wall -reverse on
   184.93 -254.55
   187.47 -251.61 192.94 -245.56 190.99 -241.79
@@ -82,14 +92,17 @@ line wall -reverse on
 endline
 
 line wall
+endline
+
+line wall
   28.3 -90.75
-  21.3 -83.6 18.72 -81.67 16.23 -79.79
+  20.25 -88.5 13.99 -85.63 11.5 -83.75
   smooth off
 endline
 
 line wall -reverse on
   10.5 -106.84
-  4.93 -97.98 2.96 -94.8 0.77 -92.03
+  7.5 -98.5 4.94 -90.27 2.75 -87.5
   smooth off
 endline
 
@@ -101,17 +114,10 @@ point 172.46 -219.21 gradient -orientation 298.51 -scale xs
 
 point 122.68 -186.95 gradient -orientation 307.77 -scale xs
 
-line rock-border -close on
-  493.25 -339.75
-  495.75 -339.25 502.5 -339.0 505.25 -339.0
-  508.0 -339.0 512.25 -338.5 515.0 -338.25
-  517.75 -338.0 525.5 -339.25 527.5 -339.25
-  529.5 -339.25 538.5 -341.25 538.0 -338.75
-  537.5 -336.25 532.75 -333.5 529.75 -332.75
-  526.75 -332.0 520.0 -328.75 516.75 -329.25
-  513.5 -329.75 501.75 -331.0 500.25 -331.5
-  498.75 -332.0 491.0 -336.25 492.0 -337.5
-  493.0 -338.75 490.75 -340.25 493.25 -339.75
+line pit
+  38.96 -114.31
+  37.25 -112.25 33.5 -107.75 30.75 -105.5
+  28.0 -103.25 22.75 -96.0 21.0 -94.5
 endline
 
 line pit
@@ -199,6 +205,7 @@ line ceiling-step
   195.0 -82.75 201.5 -85.5 203.0 -86.25
   204.5 -87.0 211.0 -91.0 212.5 -91.5
   214.0 -92.0 219.25 -96.0 220.5 -96.5
+  smooth off
 endline
 
 line pit
@@ -232,9 +239,20 @@ line rock-border -close on
   180.39 -55.59
 endline
 
+line ceiling-step -close on
+  42.5 -112.0
+  30.5 -98.25
+  42.5 -112.0
+endline
+
+line section -direction both
+  87.0 -17.25
+  122.89 -34.92 259.96 -105.39 296.0 -122.75
+endline
+
 line ceiling-step -reverse on
-  43.5 -110.5
-  44.0 -111.25 50.75 -118.0 52.5 -118.75
+  42.5 -112.0
+  43.0 -112.75 50.75 -118.0 52.5 -118.75
   54.25 -119.5 55.5 -124.0 59.75 -124.5
   64.0 -125.0 67.75 -126.25 69.5 -125.25
   71.25 -124.25 81.25 -120.75 84.75 -117.5
@@ -248,6 +266,7 @@ line ceiling-step -reverse on
   182.25 69.5 189.25 73.25 192.75 76.25
   196.25 79.25 213.5 95.0 217.0 98.75
   220.5 102.5 240.0 126.75 241.0 128.25
+  smooth off
 endline
 
 line rock-border -close on
@@ -265,11 +284,6 @@ line rock-border -close on
 endline
 
 point 153.05 -88.74 debris
-
-line section -id xx0 -direction both
-  108.27 -19.73
-  290.59 -109.2
-endline
 
 point 233.25 84.75 clay
 
@@ -492,7 +506,7 @@ point 247.93 108.04 clay
 
 point 262.82 60.92 root
 
-point 311.78 64.59 root
+point 318.53 51.34 root
 
 point 196.85 -236.22 station -subtype painted -name "A1"
 
@@ -552,9 +566,11 @@ point 347.54 135.14 gradient -orientation 352.67 -scale s
 
 point 287.87 108.69 gradient -orientation 1.47 -scale s
 
+point 391.5 148.75 flowstone
+
 point 317.70 97.31 flowstone
 
-point 301.21 164.19 flowstone
+point 297.71 166.69 flowstone
 
 point 261.80 137.22 gradient -orientation 203.64 -scale s
 
@@ -943,7 +959,7 @@ point 623.08 447.48 continuation -text "tight canyon with ledges, needs hammer a
 
 point 593.31 435.32 air-draught -orientation 242.48 -scale s
 
-point 368.09 169.04 air-draught -orientation 239.32
+point 372.34 163.29 air-draught -orientation 226.5
 
 point 356.96 181.88 curtain
 
@@ -1017,6 +1033,19 @@ endscrap
 
 
 scrap SNAKE_HEAD-xx0 -projection none -scale [0 0 39.3701 0 0 0 1 0 m]
+
+line rock-border -close on
+  493.0 -338.75
+  495.5 -338.25 503.25 -337.75 506.0 -337.75
+  508.75 -337.75 513.5 -338.0 516.25 -337.75
+  519.0 -337.5 526.75 -338.0 528.75 -338.0
+  530.75 -338.0 539.75 -339.5 539.25 -337.0
+  538.75 -334.5 532.75 -333.5 529.75 -332.75
+  526.75 -332.0 520.0 -328.75 516.75 -329.25
+  513.5 -329.75 501.75 -331.0 500.25 -331.5
+  498.75 -332.0 491.0 -336.25 492.0 -337.5
+  493.0 -338.75 490.5 -339.25 493.0 -338.75
+endline
 
 line wall
   522.85 -225.39
